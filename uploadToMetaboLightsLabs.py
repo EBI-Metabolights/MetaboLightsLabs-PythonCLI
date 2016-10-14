@@ -89,7 +89,7 @@ def executeAsperaUpload(cmd):
 
 def compileAsperaCommand(asperaConfiguration):
 	asperaConfiguration = json.loads(asperaConfiguration)
-	return ["./ascp", "-QT", "-L- -l 1000M", ''.join(str(e) for e in directories), ''.join(str(e) for e in files), asperaConfiguration['asperaUser'] + "@" + asperaConfiguration['asperaServer'] +":/" + env + "/userSpace/" + asperaConfiguration['asperaURL']]
+	return ["ascp", "-QT", "-L- -l 1000M", ''.join(str(e) for e in directories), ''.join(str(e) for e in files), asperaConfiguration['asperaUser'] + "@" + asperaConfiguration['asperaServer'] +":/" + env + "/userSpace/" + asperaConfiguration['asperaURL']]
 
 def requestUploadConfiguration():
 	# Requesting MetaboLightsLabs Webservice for the project configuration
