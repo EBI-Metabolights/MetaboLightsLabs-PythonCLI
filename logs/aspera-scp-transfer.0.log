@@ -1,0 +1,58 @@
+2016-10-14 17:19:02 [10de-0xa4490000] LOG Aspera Connect version 3.6.6.119698
+
+2016-10-14 17:19:02 [10de-0xa4490000] LOG Alternate log directory: "logs"
+2016-10-14 17:19:02 [10de-0xa4490000] LOG Configuration: using v2 configuration file "/Users/venkata/Applications/Aspera Connect.app/Contents/Resources/aspera.conf", user -
+2016-10-14 17:19:02 [10de-0xa4490000] LOG Initializing FASP version 3.5.6.112424, license max rate=(unlimited), account no.=1, license no.=1 product=6
+2016-10-14 17:19:02 [10de-0xa4490000] LOG Configured symlink actions: create=1, follow=1, follow_wide=0, skip=0
+2016-10-14 17:19:02 [10de-0xa4490000] LOG [asssh] remote host-key fingerprint f7b1c7c1c316d6ce4d2654ee32bd3a9d71fce093
+2016-10-14 17:19:03 [10de-0xa4490000] LOG [asssh] authentication succeeded, proceeding.
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Symlink actions for starters: create=0, follow=1, follow_wide=0, skip=0
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Peer doesn't support fasp_file_arg_index, fasp_file_id, or fasp_estimate_bytes
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Peer doesn't support changing all policies on-the-fly
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Peer doesn't support preserving Mac OSX extended attributes
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Peer doesn't support sender progress reports
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Peer doesn't support chunked file paths
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Peer doesn't support file-pair lists
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Peer doesn't support ds file done message
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Peer doesn't support inline file checksums
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Peer doesn't support sending low contiguous byte.
+2016-10-14 17:19:03 [10de-0xa4490000] ERR MTU discovery not implemented
+2016-10-14 17:19:03 [10de-0xa4490000] ERR Warning: unable to set Dont Fragment (DF) bit on, pMTU probing may fail
+2016-10-14 17:19:03 [10de-0xb0103000] LOG FASP Session Start uuid=05d18354-8aa4-4813-99c9-8bc96817b294 op=send status=started source=/Users/venkata/Development/MetaboLightsLabs-PythonCLI/test (1) dest=/dev/userSpace/6996ca30-672c-4cda-9a0e-d113d640776f/3e05df52-3aee-436a-8d9e-b5bf24c44d0f source_prefix=- local=172.22.70.60:56180 peer=193.62.194.180:33001 server_ssh_port=22 os="Darwin 15.6.0 Darwin Kernel Version 15.6" ver=3.5.6.112424 lic=6:1:1 peeros="Linux 2.6.32-573.1.1.el6.x86_64 #1 SMP T" peerver=2.7.0.34752 peerlic=10:353:16565 proto_sess=20002 proto_udp=20000 proto_bwmeas=20000 proto_data=20008
+2016-10-14 17:19:03 [10de-0xb0103000] LOG FASP Session Params uuid=05d18354-8aa4-4813-99c9-8bc96817b294 userid=0 user="mtblight" targetrate=1000000000 minrate=0 rate_policy=fair cipher=none resume=0 create=0 ovr=1 times=0 precalc=no mf=0 mf_path=- mf_suffix=.aspera-inprogress partial_file_suffix=- files_encrypt=no files_decrypt=no file_csum=none dgram_sz=0 prepostcmd=- tcp_mode=no rtt_auto=yes cookie="-" vl_proto_ver=1  peer_vl_proto_ver=1 vl_local=0 vlink_remote=0 vl_sess_id=3928 srcbase=- rd_sz=0 wr_sz=0 cluster_num_nodes=1 cluster_node_id=0 range=0-0 keepalive=no test_login=no proxy_ip=- net_rc_alg=alg_delay exclude_older/newer_than=0/0
+2016-10-14 17:19:03 [10de-0xa4490000] ERR MTU discovery not implemented
+2016-10-14 17:19:03 [10de-0xa4490000] ERR Warning: unable to turn off Dont Fragment (DF) bit
+2016-10-14 17:19:03 [10de-0xa4490000] LOG datagram size 1492B, block size 1452B, path MTU 1492B
+2016-10-14 17:19:03 [10de-0xb0185000] LOG Add sender src : /Users/venkata/Development/MetaboLightsLabs-PythonCLI/test dst : -
+2016-10-14 17:19:03 [10de-0xb0207000] LOG Sender bl t/o/r/dl=0/0/0/0 ctl bm/bs=0/0 rex b/r/n=0/0/0 r_ott q/s/n=0/0/0 rate t/m/c=1000000000/0/1000000 prog t/f/e=0/0/0 xmtD=0
+2016-10-14 17:19:03 [10de-0xb0207000] LOG Sender DS Qs ds/a/d/ao/eo/n/ap/rq/rd/ru/di/do=1/1/0/0/0/0/0/1/0/0/0/0 Rs o/i=1/0 mgmt backlog i/s/n =
+2016-10-14 17:19:03 [10de-0xb0103000] LOG FASP Transfer Stop uuid=05d18354-8aa4-4813-99c9-8bc96817b294 op=send status=success file="/Users/venkata/Development/MetaboLightsLabs-PythonCLI/test/test1.txt" size=0 start_byte=0 rate=0.00Kbps elapsed=0.00s loss=0.00 rexreqs=0 overhead=0
+2016-10-14 17:19:03 [10de-0xb0103000] LOG FASP Transfer Stop uuid=05d18354-8aa4-4813-99c9-8bc96817b294 op=send status=success file="/Users/venkata/Development/MetaboLightsLabs-PythonCLI/test/test2.csv" size=0 start_byte=0 rate=0.00Kbps elapsed=0.00s loss=0.00 rexreqs=0 overhead=0
+2016-10-14 17:19:03 [10de-0xb0103000] LOG FASP Transfer Stop uuid=05d18354-8aa4-4813-99c9-8bc96817b294 op=send status=success file="/Users/venkata/Development/MetaboLightsLabs-PythonCLI/test/test3.cdf" size=0 start_byte=0 rate=0.00Kbps elapsed=0.00s loss=0.00 rexreqs=0 overhead=0
+2016-10-14 17:19:03 [10de-0xb0103000] LOG FASP Transfer Stop uuid=05d18354-8aa4-4813-99c9-8bc96817b294 op=send status=success file="/Users/venkata/Development/MetaboLightsLabs-PythonCLI/test/test4/test4.mzml" size=0 start_byte=0 rate=0.00Kbps elapsed=0.00s loss=0.00 rexreqs=0 overhead=0
+2016-10-14 17:19:03 [10de-0xb0207000] LOG Sender bl t/o/r/dl=0/0/0/0 ctl bm/bs=0/0 rex b/r/n=0/0/0 r_ott q/s/n=0/0/0 rate t/m/c=1000000000/0/100000000 prog t/f/e=0/0/0 xmtD=0
+2016-10-14 17:19:03 [10de-0xb0207000] LOG Sender DS Qs ds/a/d/ao/eo/n/ap/rq/rd/ru/di/do=0/0/0/0/0/0/0/0/0/0/0/0 Rs o/i=6/6 mgmt backlog i/s/n =
+2016-10-14 17:19:03 [10de-0xb0207000] LOG Sender bl t/o/r/dl=0/0/0/0 ctl bm/bs=0/0 rex b/r/n=0/0/0 r_ott q/s/n=0/0/0 rate t/m/c=1000000000/0/100000000 prog t/f/e=0/0/0 xmtD=0
+2016-10-14 17:19:03 [10de-0xb0207000] LOG Sender DS Qs ds/a/d/ao/eo/n/ap/rq/rd/ru/di/do=0/0/0/0/0/0/0/0/0/0/0/0 Rs o/i=6/6 mgmt backlog i/s/n =
+2016-10-14 17:19:03 [10de-0xb0103000] LOG FASP Session Stop uuid=05d18354-8aa4-4813-99c9-8bc96817b294 op=send status=success source=/Users/venkata/Development/MetaboLightsLabs-PythonCLI/test (1) dest=/dev/userSpace/6996ca30-672c-4cda-9a0e-d113d640776f/3e05df52-3aee-436a-8d9e-b5bf24c44d0f source_prefix=- local=172.22.70.60:56180 peer=193.62.194.180:33001 server_ssh_port=22 os="Darwin 15.6.0 Darwin Kernel Version 15.6" ver=3.5.6.112424 lic=6:1:1 peeros="Linux 2.6.32-573.1.1.el6.x86_64 #1 SMP T" peerver=2.7.0.34752 peerlic=10:353:16565 proto_sess=20002 proto_udp=20000 proto_bwmeas=20000 proto_data=20008
+2016-10-14 17:19:03 [10de-0xb0103000] LOG FASP Session Params uuid=05d18354-8aa4-4813-99c9-8bc96817b294 userid=0 user="mtblight" targetrate=1000000000 minrate=0 rate_policy=fair cipher=none resume=0 create=0 ovr=1 times=0 precalc=no mf=0 mf_path=- mf_suffix=.aspera-inprogress partial_file_suffix= files_encrypt=no files_decrypt=no file_csum=none dgram_sz=0 prepostcmd=- tcp_mode=no rtt_auto=yes cookie="-" vl_proto_ver=1  peer_vl_proto_ver=1 vl_local=0 vlink_remote=0 vl_sess_id=3928 srcbase=- rd_sz=0 wr_sz=0 cluster_num_nodes=1 cluster_node_id=0 range=0-0 keepalive=no test_login=no proxy_ip=- net_rc_alg=alg_delay exclude_older/newer_than=0/0
+2016-10-14 17:19:03 [10de-0xb0103000] LOG FASP Session Statistics [Sender] id=05d18354-8aa4-4813-99c9-8bc96817b294 delay=8ms rex_delay=8ms solicited_rex=0.00% unsolicited_rex=0.00% ave_xmit_rate 0.00Kbps effective=0.00% effective_rate=0.00Kbps (detail: good_blks 0 bl_total 0 bl_orig 0 bl_rex 0 dup_last_blks 0) (sndr ctl: sent 0 rcvd 0 lost 0 lost 0.00%) (rcvr ctl: sent 1 rcvd 1 lost 0 lost 0.00%) (rex  ctl: sent 0 rcvd 0 lost 0 lost 0.00%) (progress: tx_bytes 0 file_bytes 0 tx_time 100238) (estimate transfer size: 0 bytes)  sess->instru.num_rex_xfer_not_found 0 sess->instru.num_rex_abrtxfer_not_found 0
+2016-10-14 17:19:03 [10de-0xa4490000] LOG ======= File Transfer statistics =======
+2016-10-14 17:19:03 [10de-0xa4490000] LOG ------- Source statistics -------
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Source argument scans attempted             :          1
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source argument scans completed           :          1
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Source path scans attempted                 :          6
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source path scans failed                  :          0
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source path scans skipped since irregular :          0
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source path scans excluded                :          0
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source directory scans completed          :          2
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source file scans completed               :          4
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Source directory creates attempted          :          2
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source directory creates failed           :          0
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source directory created or existed       :          2
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Source file transfers attempted             :          4
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source file transfers failed              :          0
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source file transfers passed              :          4
+2016-10-14 17:19:03 [10de-0xa4490000] LOG - Source file transfers skipped             :          4
+2016-10-14 17:19:03 [10de-0xa4490000] LOG Source bytes transferred                    :          0
+2016-10-14 17:19:03 [10de-0xa4490000] LOG ======= end File Transfer statistics =======

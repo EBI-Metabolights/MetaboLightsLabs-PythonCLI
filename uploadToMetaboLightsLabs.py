@@ -32,7 +32,7 @@ directories = []
 files = []
 project_id = None
 new_project_flag = False
-log_file = "log.txt"
+log_file = "logs/cli.log"
 env = "dev"
 servers = [ "prod", "dev", "test" ]
 serverPortDictionary = {
@@ -74,22 +74,27 @@ def main(arguments):
 		asperaCommand  = compileAsperaCommand(asperaConfiguration)
 		logging.info("Checking aspera Environment variables")
 		executeAsperaUpload(asperaCommand)
-		logging.info("Executing aspera command")
-		logging.info("File(s)/Folder(s) upload successful")				
+		#logging.info("Executing aspera command")
+		#logging.info("File(s)/Folder(s) upload successful")				
 	else:
 		logging.info("Input validation Failed: Terminating program")
 		print "Invalid Input: Please check the "+log_file+" for more details"
 
-def executeAsperaUpload(cmd):
-	#print cmd
-	p = subprocess.Popen(['ls', '-a'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+def executeAsperaUpload(cmds):
+	cmd = filter(None, cmds[1])
+	cmd = filter(bool, cmd)
+	os.environ["ASPERA_SCP_PASS"] = cmds[0]
+	p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	out, err = p.communicate()
 	logging.info(out)
 	logging.error(err)
 
 def compileAsperaCommand(asperaConfiguration):
 	asperaConfiguration = json.loads(asperaConfiguration)
-	return ["ascp", "-QT", "-L- -l 1000M", ''.join(str(e) for e in directories), ''.join(str(e) for e in files), asperaConfiguration['asperaUser'] + "@" + asperaConfiguration['asperaServer'] +":/" + env + "/userSpace/" + asperaConfiguration['asperaURL']]
+	filesLocation = (str(' '.join(str(e) for e in directories).strip() + " " + ' '.join(str(e) for e in files))).strip()
+	remoteHost = asperaConfiguration['asperaUser'] + "@" + asperaConfiguration['asperaServer'] +":/" + env + "/userSpace/" + asperaConfiguration['asperaURL']
+	asperaSecret = asperaConfiguration['asperaSecret']
+	return [ asperaSecret, "ascp -QT -L logs -l 1g " + filesLocation + " " + remoteHost ]
 
 def requestUploadConfiguration():
 	# Requesting MetaboLightsLabs Webservice for the project configuration

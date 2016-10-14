@@ -1,0 +1,16 @@
+INFO:root:Validating Input Parameters
+INFO:root:API Key:6996ca30-672c-4cda-9a0e-d113d640776f
+INFO:root:Adding /Users/venkata/Development/MetaboLightsLabs-PythonCLI/test to the folders to be uploaded list
+INFO:root:Setting env flag: dev
+INFO:root:Create new project flag provided: true
+INFO:root:Project_id assigned: None
+INFO:root:Input validation Success
+INFO:root:Requesting project aspera upload configuration
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): wwwdev.ebi.ac.uk
+INFO:root:Required project details obtained
+INFO:root:Compling aspera command
+INFO:root:Checking aspera Environment variables
+INFO:root:Completed: 0K bytes transferred in 0 seconds
+ (0K bits/sec), in 4 files, 2 directories; 4 files skipped or empty.
+
+ERROR:root:
