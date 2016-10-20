@@ -105,7 +105,7 @@ def compileAsperaCommand(asperaConfiguration):
 	filesLocation = (str(' '.join(str(e) for e in directories).strip() + " " + ' '.join(str(e) for e in files))).strip()
 	remoteHost = asperaConfiguration['asperaUser'] + "@" + asperaConfiguration['asperaServer'] +":/" + env + "/userSpace/" + asperaConfiguration['asperaURL']
 	asperaSecret = asperaConfiguration['asperaSecret']
-	return [ asperaSecret, "ascp -QT -L logs -l 1g " + filesLocation + " " + remoteHost ]
+	return [ asperaSecret, "ascp -QT -L . -l 1g " + filesLocation + " " + remoteHost ]
 
 def requestUploadConfiguration():
 	# Requesting MetaboLightsLabs Webservice for the project configuration
