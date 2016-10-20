@@ -32,7 +32,7 @@ directories = []
 files = []
 project_id = None
 new_project_flag = False
-log_file = "logs/cli.log"
+log_file = "cli.log"
 env = "dev"
 servers = [ "prod", "dev", "test" ]
 serverPortDictionary = {
@@ -52,7 +52,18 @@ serverPortDictionary = {
 
 def main(arguments):
 	logging.basicConfig(filename=log_file, level=logging.INFO)
-	parser = argparse.ArgumentParser( description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+	usage = """
+	python uploadToMetaboLightsLabs.py -t <MetaboLights Labs API_KEY> -i [ <filesToUpload> ] -p <MetaboLights Labs Project_ID> -n -s <ENV>
+	or
+	uploadToMetaboLightsLabs.py -t <MetaboLights Labs API_KEY> -i [ <filesToUpload> ] -p <MetaboLights Labs Project_ID> -n -s <ENV>
+Arguments:
+	-t MetaboLights Labs API_KEY
+	-i pathToFile1, pathToFile2, . . ., pathToFileN
+	-p MetaboLights Labs Project ID
+	-n Create new project if project doesnt exist
+	-s server [ "prod", "dev", "test" ]
+	"""
+	parser = argparse.ArgumentParser( description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter, usage=usage)
 	parser.add_argument('-t', required = True, help='MetaboLights API Key')
 	parser.add_argument('-i', required = True, nargs='+', help="Input folder(s)/file(s)")
 	parser.add_argument('-p', help='MetaboLights Labs Project ID')
@@ -98,7 +109,7 @@ def compileAsperaCommand(asperaConfiguration):
 	remoteHost = asperaConfiguration['asperaUser'] + "@" + asperaConfiguration['asperaServer'] +":/" + env + "/userSpace/" + asperaConfiguration['asperaURL']
 	logging.info("Project Location:" + " '/" + env + "/userSpace/" + asperaConfiguration['asperaURL'] + "'")
 	asperaSecret = asperaConfiguration['asperaSecret']
-	return [ asperaSecret, "ascp -QT -L logs -l 1g " + filesLocation + " " + remoteHost ]
+	return [ asperaSecret, "ascp -QT -L . -l 1g " + filesLocation + " " + remoteHost ]
 
 def requestUploadConfiguration():
 	# Requesting MetaboLightsLabs Webservice for the project configuration
