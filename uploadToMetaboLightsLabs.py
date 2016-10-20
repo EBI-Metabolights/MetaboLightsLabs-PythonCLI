@@ -85,8 +85,6 @@ Arguments:
 		asperaCommand  = compileAsperaCommand(asperaConfiguration)
 		logging.info("Checking aspera Environment variables")
 		executeAsperaUpload(asperaCommand)
-		#logging.info("Executing aspera command")
-		#logging.info("File(s)/Folder(s) upload successful")				
 	else:
 		logging.info("Input validation Failed: Terminating program")
 		print "Invalid Input: Please check the "+log_file+" for more details"
