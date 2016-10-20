@@ -87,12 +87,16 @@ def executeAsperaUpload(cmds):
 	p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	out, err = p.communicate()
 	logging.info(out)
-	logging.error(err)
+	if err:
+		logging.error(err)
+	else:
+		logging.info("Files uploaded successfully")
 
 def compileAsperaCommand(asperaConfiguration):
 	asperaConfiguration = json.loads(asperaConfiguration)
 	filesLocation = (str(' '.join(str(e) for e in directories).strip() + " " + ' '.join(str(e) for e in files))).strip()
 	remoteHost = asperaConfiguration['asperaUser'] + "@" + asperaConfiguration['asperaServer'] +":/" + env + "/userSpace/" + asperaConfiguration['asperaURL']
+	logging.info("Project Location:" + " '/" + env + "/userSpace/" + asperaConfiguration['asperaURL'] + "'")
 	asperaSecret = asperaConfiguration['asperaSecret']
 	return [ asperaSecret, "ascp -QT -L logs -l 1g " + filesLocation + " " + remoteHost ]
 
@@ -148,7 +152,7 @@ def parseInput(args):
 			return False
 	else:
 		project_id = args.p
-		logging.info("Project_id assigned: " + str(project_id))
+		logging.info("Project_id assigned @Input : " + str(project_id))
 
 	# Checking if no files or folders exist
 	if (len(files) == 0  and len(directories) == 0):
