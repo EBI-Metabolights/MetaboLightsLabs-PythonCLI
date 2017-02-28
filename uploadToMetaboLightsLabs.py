@@ -111,7 +111,7 @@ def compileAsperaCommand(asperaConfiguration):
 
 def requestUploadConfiguration():
 	# Requesting MetaboLightsLabs Webservice for the project configuration
-	url = serverPortDictionary[env]["server"] + "webservice/workspace/asperaConfiguration"
+	url = serverPortDictionary[env]["server"] + "webservice/labs-workspace/asperaConfiguration"
 	payload = json.dumps({'api_token': api_token, 'project_id': project_id, 'new_project_flag': new_project_flag });
 	headers = { 'content-type': "application/json", 'cache-control': "no-cache" }
 	try:
