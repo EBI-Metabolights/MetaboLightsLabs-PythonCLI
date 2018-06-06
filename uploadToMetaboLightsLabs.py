@@ -237,4 +237,5 @@ if __name__ == '__main__':
     try:
         sys.exit(main(sys.argv[1:]))
     finally:
-        shutil.rmtree(tmpdir)
+        if tmpdir != '':
+            shutil.rmtree(tmpdir)
