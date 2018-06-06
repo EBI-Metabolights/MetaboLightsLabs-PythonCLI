@@ -65,8 +65,11 @@ def main(arguments):
     uploadToMetaboLightsLabs.py -t <MetaboLights Labs API_KEY> -I <path to IsaTab folder> -p <MetaboLights Labs Project_ID> -n -s <ENV>
 Arguments:
     -t MetaboLights Labs API_KEY
+    
     -i pathToFile1, pathToFile2, . . ., pathToFileN
+    or
     -I pathToIsaTabfolder
+    
     -p MetaboLights Labs Project ID
     -n Create new project if project doesnt exist
     -s server [ "prod", "dev", "test" ]
@@ -77,7 +80,7 @@ Arguments:
     parser.add_argument('-t', required=True, help='MetaboLights API Key')
     parser.add_argument('-i', required=False, nargs='+',
                         help="Input folder(s)/file(s)")
-    parser.add_argument('-I', required=False, nargs=1,
+    parser.add_argument('-I', required=False,
                         help="Input folder containing ISA-Tab, raw, and maf files")
     parser.add_argument('-p', help='MetaboLights Labs Project ID')
     parser.add_argument('-n',
@@ -199,7 +202,7 @@ def parseInput(args):
                     zip.write(data_file)
             files.append(datazip_path)
     else:
-        logging.warning("Not input folder or files provided")
+        logging.warning("No input folder or files provided")
         return False
 
     # Assigning env to the global variable
