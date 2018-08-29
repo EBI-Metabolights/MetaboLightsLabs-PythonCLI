@@ -136,7 +136,7 @@ def compileAsperaCommand(asperaConfiguration):
             'asperaURL'] + "'")
     asperaSecret = asperaConfiguration['asperaSecret']
     return [asperaSecret,
-            "ascp -QT -L . -l 1g " + filesLocation + " " + remoteHost]
+            "ascp -QT -P 33001 -L . -l 300M " + filesLocation + " " + remoteHost]
 
 
 def requestUploadConfiguration():
