@@ -124,7 +124,8 @@ def executeAsperaUpload(cmds):
 
 
 def compileAsperaCommand(asperaConfiguration):
-    asperaConfiguration = json.loads(asperaConfiguration)
+    if is_string(asperaConfiguration):
+        asperaConfiguration = json.loads(asperaConfiguration)
     filesLocation = (str(
         ' '.join(str(e) for e in directories).strip() + " " + ' '.join(
             str(e) for e in files))).strip()
@@ -138,6 +139,12 @@ def compileAsperaCommand(asperaConfiguration):
     return [asperaSecret,
             "ascp -QT -P 33001 -L . -l 300M " + filesLocation + " " + remoteHost]
 
+def is_string(configuration):
+    try:
+        json_object = json.loads(configuration)
+    except ValueError, e:
+        return False
+    return True
 
 def requestUploadConfiguration():
     # Requesting MetaboLightsLabs Webservice for the project configuration
