@@ -106,7 +106,7 @@ Arguments:
         executeAsperaUpload(asperaCommand)
     else:
         logging.info("Input validation Failed: Terminating program")
-        print "Invalid Input: Please check the " + log_file + " for more details"
+        print("Invalid Input: Please check the " + log_file + " for more details")
 
 
 def executeAsperaUpload(cmds):
@@ -142,7 +142,7 @@ def compileAsperaCommand(asperaConfiguration):
 def is_string(configuration):
     try:
         json_object = json.loads(configuration)
-    except ValueError, e:
+    except ValueError:
         return False
     return True
 
@@ -158,7 +158,7 @@ def requestUploadConfiguration():
                                     headers=headers)
     except requests.exceptions.RequestException as e:  # This is the correct syntax
         logging.error(e)
-        print "Request failed! Refer to the log file for more details"
+        print("Request failed! Refer to the log file for more details")
         sys.exit(1)
     try:
         response_json = json.loads(response.text)['content']
